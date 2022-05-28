@@ -4,6 +4,7 @@ import { Routes, Route, useParams } from 'react-router-dom';
 import { Layout } from 'components/Layout';
 import { Trending } from 'components/view/Trending';
 import { MoviesView } from 'components/view/MoviesView';
+import { SearchBar } from 'components/SearchBar';
 
 import {
   getTrendingMovies,
