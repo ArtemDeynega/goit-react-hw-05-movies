@@ -29,7 +29,7 @@ export const getSearchMovies = async query => {
   const { data } = await getMovie(
     `${SET_URL.SEARCH}/${SET_URL.PATH}?include_adult=false&query=${query}`
   );
-
+  console.log(data.results);
   return data.results;
 };
 export const getMovieDetails = async movieId => {
