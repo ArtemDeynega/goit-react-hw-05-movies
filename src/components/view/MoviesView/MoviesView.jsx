@@ -36,6 +36,7 @@ export const MoviesView = () => {
     fetchMovies();
     setMovies(null);
   }, [searchQuery]);
+  console.log(movies);
 
   return (
     <>

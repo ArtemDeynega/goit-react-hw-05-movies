@@ -1,6 +1,6 @@
-import { useState, lazy } from 'react';
+// import { useState, lazy } from 'react';
 
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Layout } from 'components/Layout';
 import { Trending } from 'components/view/Trending';
