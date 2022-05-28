@@ -1,5 +1,5 @@
 import { Header } from '.';
-import { Navigation } from '../../Navigation';
+import { Navigation } from 'components/Navigation';
 export const AppBar = () => {
   return (
     <>

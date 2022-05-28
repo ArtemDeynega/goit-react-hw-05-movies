@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import { SearchBar } from 'components/SearchBar';
 import { Outlet } from 'react-router-dom';
 import { getSearchMovies } from 'service/movieApi';
-import { MovieCard } from '../MovieCard';
+import { MovieCard } from 'components/MovieCard';
 
 export const MoviesView = () => {
   const [searchQuery, setSearchQuery] = useState('');

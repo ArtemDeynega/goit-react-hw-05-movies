@@ -3,7 +3,10 @@ import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Layout } from 'components/Layout';
-import { Trending } from 'components/view/Trending';
+import { Trending } from 'view/Trending';
+import { MoviesView } from 'view/MoviesView';
+import { MovieDetails } from 'view/MovieDetails';
+
 // import {
 //   getTrendingMovies,
 //   getSearchMovies,
@@ -13,14 +16,6 @@ import { Trending } from 'components/view/Trending';
 //   fetchImage,
 // } from 'service/movieApi';
 import { GlobalStyles } from 'Styles/GlobalStyles/GlobalStyles';
-// import { MoviesView } from 'components/view/MoviesView';
-
-const MoviesView = lazy(
-  () =>
-    import(
-      'components/view/MoviesView/MoviesView.jsx'
-    ) /* webpackChunkName: "movies-view" */
-);
 
 // /trending
 // /search
@@ -35,7 +30,8 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Trending />} />
-          <Route path="movies" element={<MoviesView />}></Route>
+          <Route path="movies" element={<MoviesView />} />
+          <Route path=":movieId" element={<MovieDetails />} />
         </Route>
       </Routes>
       <GlobalStyles />

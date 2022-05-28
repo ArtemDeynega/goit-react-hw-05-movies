@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import { getTrendingMovies } from 'service/movieApi';
 
 import { useState, useEffect } from 'react';
-import { MovieCard } from '../MovieCard';
+import { MovieCard } from 'components/MovieCard';
 
 export const Trending = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
