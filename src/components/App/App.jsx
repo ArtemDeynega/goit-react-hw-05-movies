@@ -1,11 +1,9 @@
-// import { useState, lazy } from 'react';
+import { lazy } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Layout } from 'components/Layout';
 import { Trending } from 'components/view/Trending';
-import { MoviesView } from 'components/view/MoviesView';
-
 // import {
 //   getTrendingMovies,
 //   getSearchMovies,
@@ -15,6 +13,14 @@ import { MoviesView } from 'components/view/MoviesView';
 //   fetchImage,
 // } from 'service/movieApi';
 import { GlobalStyles } from 'Styles/GlobalStyles/GlobalStyles';
+// import { MoviesView } from 'components/view/MoviesView';
+
+const MoviesView = lazy(
+  () =>
+    import(
+      'components/view/MoviesView/MoviesView.jsx'
+    ) /* webpackChunkName: "movies-view" */
+);
 
 // /trending
 // /search
