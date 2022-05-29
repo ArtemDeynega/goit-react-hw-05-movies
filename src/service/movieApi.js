@@ -17,7 +17,7 @@ const getMovie = axios.create({
 });
 
 export const fetchImage = filePath => {
-  return `https://image.tmdb.org/t/p/w500/${filePath}`;
+  return `https://image.tmdb.org/t/p/w300/${filePath}`;
 };
 export const getTrendingMovies = async () => {
   const { data } = await getMovie(`${SET_URL.HOME}/${SET_URL.PATH}/day?`);

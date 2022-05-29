@@ -2,10 +2,10 @@ import { toast } from 'react-toastify';
 import { getTrendingMovies } from 'service/movieApi';
 
 import { useState, useEffect } from 'react';
-import { MovieCard } from 'components/MovieCard';
+import { MovieCard } from 'view/MovieCard';
 
 export const Trending = () => {
-  const [trendingMovies, setTrendingMovies] = useState([]);
+  const [trendingMovies, setTrendingMovies] = useState(null);
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
@@ -24,7 +24,7 @@ export const Trending = () => {
   return (
     <>
       <h1>Trending today</h1>
-      {/* <MovieCard movie={trendingMovies} /> */}
+      {trendingMovies && <MovieCard movies={trendingMovies} />}
     </>
   );
 };
