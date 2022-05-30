@@ -1,25 +1,23 @@
 import userAnonim from 'image/user-anonim.jpeg';
 
 import { Container } from 'components/Container';
+import { Img, Text, ListItem, Item } from './MovieCastsCard.styled';
 
 const IMG_API = 'https://image.tmdb.org/t/p/w300/';
 export const MovieCastsCard = ({ casts }) => {
   return (
     <Container>
-      <ul>
+      <Item>
         {casts.map(({ id, name, profile_path }) => (
-          <li key={id}>
-            <img
-              style={{
-                width: 40,
-              }}
+          <ListItem key={id}>
+            <Img
               src={profile_path ? `${IMG_API}${profile_path}` : `${userAnonim}`}
               alt="actor"
             />
-            <p>{name}</p>
-          </li>
+            <Text>{name}</Text>
+          </ListItem>
         ))}
-      </ul>
+      </Item>
     </Container>
   );
 };

@@ -1,7 +1,6 @@
 import autorImg from 'image/user-anonim.jpeg';
 import { ListItem, Item, Img } from './MovieReviewsCard.styled';
 export const MovieReviewsCard = ({ reviews }) => {
-  console.log(reviews);
   return (
     <>
       <Item>

@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import { getTrendingMovies } from 'service/movieApi';
+import { TrendingTitle } from '.';
 
 import { useState, useEffect } from 'react';
 import { MovieCard } from 'view/MovieCard';
@@ -23,7 +24,7 @@ export const Trending = () => {
 
   return (
     <>
-      <h1>Trending today</h1>
+      <TrendingTitle>Trending today</TrendingTitle>
       {trendingMovies && <MovieCard movies={trendingMovies} />}
     </>
   );
