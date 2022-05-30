@@ -1,8 +1,10 @@
 import { useNavigate, Link } from 'react-router-dom';
+
 import { ListItem, Img, Title } from '.';
 
 export const MovieCard = ({ movies }) => {
   let navigate = useNavigate();
+  // console.log(navigate);
 
   return (
     <>

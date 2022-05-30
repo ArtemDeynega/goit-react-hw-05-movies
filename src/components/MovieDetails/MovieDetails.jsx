@@ -4,7 +4,7 @@ import { getMovieDetails } from 'service/movieApi';
 import { MovieDetailsCard } from '../../view/MovieDetailsCard';
 import { Container } from 'components/Container';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const navigate = useNavigate();
   const { movieId } = useParams();
   const [filmId, ,] = useState(movieId);
@@ -40,3 +40,4 @@ export const MovieDetails = () => {
     </>
   );
 };
+export default MovieDetails;

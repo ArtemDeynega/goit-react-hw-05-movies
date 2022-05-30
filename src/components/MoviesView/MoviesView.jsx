@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+
 import { SearchBar } from 'components/SearchBar';
 import { Outlet } from 'react-router-dom';
 import { getSearchMovies } from 'service/movieApi';
 import { MovieCard } from 'view/MovieCard';
 
-export const MoviesView = () => {
+const MoviesView = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState(null);
   const [, setError] = useState(null);
@@ -40,8 +41,10 @@ export const MoviesView = () => {
   return (
     <>
       <SearchBar onSubmit={handleQuery} />
+
       {movies && <MovieCard movies={movies} />}
       <Outlet />
     </>
   );
 };
+export default MoviesView;

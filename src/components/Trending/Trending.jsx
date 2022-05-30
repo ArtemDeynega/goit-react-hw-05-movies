@@ -1,11 +1,12 @@
-import { toast } from 'react-toastify';
 import { getTrendingMovies } from 'service/movieApi';
+
 import { TrendingTitle } from '.';
+import { Loader } from 'components/Loader';
 
 import { useState, useEffect } from 'react';
 import { MovieCard } from 'view/MovieCard';
 
-export const Trending = () => {
+const Trending = () => {
   const [trendingMovies, setTrendingMovies] = useState(null);
 
   useEffect(() => {
@@ -16,7 +17,6 @@ export const Trending = () => {
         return;
       } catch (error) {
         console.log(error);
-        toast.error(`Что то пошло не так 😕`);
       }
     };
     fetchTrendingMovies();
@@ -25,7 +25,10 @@ export const Trending = () => {
   return (
     <>
       <TrendingTitle>Trending today</TrendingTitle>
+      {!trendingMovies && <Loader />}
+
       {trendingMovies && <MovieCard movies={trendingMovies} />}
     </>
   );
 };
+export default Trending;

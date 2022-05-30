@@ -1,45 +1,34 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
+import { Loader } from 'components/Loader';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { Layout } from 'components/Layout';
-import { Trending } from 'view/Trending';
-import { MoviesView } from 'view/MoviesView';
-import { MovieDetails } from 'components/MovieDetails';
+
 import { NotFound } from 'components/NotFound';
 import { MovieCasts } from 'components/MovieCasts';
 import { MovieReviews } from 'components/MovieReviews';
-
-// import {
-//   getTrendingMovies,
-//   getSearchMovies,
-//   getMovieDetails,
-//   getMovieCredits,
-//   getMovieReviews,
-//   fetchImage,
-// } from 'service/movieApi';
 import { GlobalStyles } from 'Styles/GlobalStyles/GlobalStyles';
 
-// /trending
-// /search
-// /movies
-// /:details
-// /:credits
-// /:reviews
+const HomaPageLazy = lazy(() => import('components/Layout'));
+const TrendingLazy = lazy(() => import('components/Trending'));
+const MoviesViewLazy = lazy(() => import('components/MoviesView'));
+const MovieDetailsLazy = lazy(() => import('components/MovieDetails'));
 
 export const App = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Trending />} />
-          <Route path="movies" element={<MoviesView />} />
-          <Route path="movies/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<MovieCasts />} />
-            <Route path="reviews" element={<MovieReviews />} />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<HomaPageLazy />}>
+            <Route index element={<TrendingLazy />} />
+            <Route path="movies" element={<MoviesViewLazy />} />
+            <Route path="movies/:movieId" element={<MovieDetailsLazy />}>
+              <Route path="cast" element={<MovieCasts />} />
+              <Route path="reviews" element={<MovieReviews />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+        </Routes>
+      </Suspense>
       <GlobalStyles />
       <ToastContainer autoClose={3000} />
     </>
