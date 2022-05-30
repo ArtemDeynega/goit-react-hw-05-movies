@@ -32,6 +32,9 @@ export const MovieDetails = () => {
         <Link to={`/movies/${movieId}/cast`}>
           <h3>Casts</h3>
         </Link>
+        <Link to={`/movies/${movieId}/reviews`}>
+          <h3>Reviews</h3>
+        </Link>
       </Container>
       <Outlet />
     </>

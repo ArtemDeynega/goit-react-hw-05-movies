@@ -45,6 +45,6 @@ export const getMovieCredits = async movieId => {
 
 export const getMovieReviews = async movieId => {
   const { data } = await getMovie(`${SET_URL.PATH}/${movieId}/reviews?page=1`);
-  //   console.log(data.results);
+
   return data.results;
 };

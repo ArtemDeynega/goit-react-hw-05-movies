@@ -7,6 +7,7 @@ import { MoviesView } from 'view/MoviesView';
 import { MovieDetails } from 'components/MovieDetails';
 import { NotFound } from 'components/NotFound';
 import { MovieCasts } from 'components/MovieCasts';
+import { MovieReviews } from 'components/MovieReviews';
 
 // import {
 //   getTrendingMovies,
@@ -34,6 +35,7 @@ export const App = () => {
           <Route path="movies" element={<MoviesView />} />
           <Route path="movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<MovieCasts />} />
+            <Route path="reviews" element={<MovieReviews />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Route>
