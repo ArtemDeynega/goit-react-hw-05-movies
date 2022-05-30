@@ -1,29 +1,13 @@
 import { useParams, Outlet, Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { getMovieDetails } from 'service/movieApi';
 import { MovieDetailsCard } from '../../view/MovieDetailsCard';
 import { Container } from 'components/Container';
+import { useFetchMovieDetails } from 'hooks/useFetchMovieDetails';
 
 const MovieDetails = () => {
   const navigate = useNavigate();
   const { movieId } = useParams();
-  const [filmId, ,] = useState(movieId);
-  const [movie, setMovie] = useState(null);
-  const [, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchMovieDetails = async () => {
-      try {
-        await getMovieDetails(filmId).then(response => {
-          return setMovie(response);
-        });
-      } catch (error) {
-        console.log(error);
-        setError(error);
-      }
-    };
-    fetchMovieDetails();
-  }, [filmId, movieId]);
+  const movie = useFetchMovieDetails();
 
   return (
     <>
