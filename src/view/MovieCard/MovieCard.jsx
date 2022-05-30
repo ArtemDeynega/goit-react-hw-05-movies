@@ -3,7 +3,7 @@ import { ListItem, Img, Title } from '.';
 
 export const MovieCard = ({ movies }) => {
   let navigate = useNavigate();
-  console.log(movies);
+
   return (
     <>
       <ul>

@@ -6,6 +6,7 @@ import { Trending } from 'view/Trending';
 import { MoviesView } from 'view/MoviesView';
 import { MovieDetails } from 'components/MovieDetails';
 import { NotFound } from 'components/NotFound';
+import { MovieCasts } from 'components/MovieCasts';
 
 // import {
 //   getTrendingMovies,
@@ -31,7 +32,9 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Trending />} />
           <Route path="movies" element={<MoviesView />} />
-          <Route path="movies/:movieId" element={<MovieDetails />} />
+          <Route path="movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<MovieCasts />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
