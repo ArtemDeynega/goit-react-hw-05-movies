@@ -1,6 +1,13 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
-export const LinkMovie = styled(Link)`
-  backgroundcolor: #1233;
+export const Img = styled.img`
+  width: 200px;
+`;
+export const ListItem = styled.li`
+  margin-bottom: 24px;
+  margin-left: 20px;
+`;
+
+export const Title = styled.h3`
+  margin-bottom: 4px;
 `;

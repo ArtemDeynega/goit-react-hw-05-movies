@@ -1,22 +1,22 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { LinkMovie } from '.';
+import { ListItem, Img, Title } from '.';
 
 export const MovieCard = ({ movies }) => {
-  console.log(movies);
   let navigate = useNavigate();
+  console.log(movies);
   return (
     <>
       <ul>
         {movies.map(({ id, title, poster_path }) => (
-          <li key={id}>
-            <LinkMovie to={`/movies/${id}`}>
-              <h3>{title}</h3>
-              <img
+          <ListItem key={id}>
+            <Link to={`/movies/${id}`}>
+              <Title>{title}</Title>
+              <Img
                 src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
                 alt="poster film"
               />
-            </LinkMovie>
-          </li>
+            </Link>
+          </ListItem>
         ))}
       </ul>
     </>

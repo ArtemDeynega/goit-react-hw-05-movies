@@ -1,6 +1,7 @@
 import { BiSearchAlt } from 'react-icons/bi';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { Input, Header, Form } from '.';
 
 export const SearchBar = ({ onSubmit }) => {
   const [searchValue, setSearchValue] = useState('');
@@ -20,9 +21,9 @@ export const SearchBar = ({ onSubmit }) => {
 
   return (
     <>
-      <header>
-        <form onSubmit={hableInputChange}>
-          <input
+      <Header>
+        <Form onSubmit={hableInputChange}>
+          <Input
             placeholder="Search movie"
             value={searchValue}
             onChange={handleSubmit}
@@ -36,8 +37,8 @@ export const SearchBar = ({ onSubmit }) => {
               }}
             />
           </button>
-        </form>
-      </header>
+        </Form>
+      </Header>
     </>
   );
 };
