@@ -34,7 +34,7 @@ export const getSearchMovies = async query => {
 };
 export const getMovieDetails = async movieId => {
   const { data } = await getMovie(`${SET_URL.PATH}/${movieId}`);
-  console.log(data);
+  // console.log(data);
   return data;
 };
 export const getMovieCredits = async movieId => {

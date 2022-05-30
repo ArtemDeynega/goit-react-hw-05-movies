@@ -4,9 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import { Layout } from 'components/Layout';
 import { Trending } from 'view/Trending';
 import { MoviesView } from 'view/MoviesView';
-import { MovieDetails } from 'view/MovieDetails';
+import { MovieDetails } from 'components/MovieDetails';
 import { NotFound } from 'components/NotFound';
-import { getMovieDetails } from 'service/movieApi';
 
 // import {
 //   getTrendingMovies,
@@ -26,8 +25,6 @@ import { GlobalStyles } from 'Styles/GlobalStyles/GlobalStyles';
 // /:reviews
 
 export const App = () => {
-  // const data = getMovieDetails('361743');
-  // console.log(data);
   return (
     <>
       <Routes>
