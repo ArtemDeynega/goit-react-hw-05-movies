@@ -14,7 +14,6 @@ const MovieDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const history = useRef(location);
-  console.log(history);
 
   const { movieId } = useParams();
 
