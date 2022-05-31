@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container } from 'components/Container';
 import {
   MovieImg,
@@ -30,4 +31,19 @@ export const MovieDetailsCard = ({ movie }) => {
       </DetailsContainer>
     </Container>
   );
+};
+MovieDetailsCard.movie = {
+  movie: PropTypes.objectOf(
+    PropTypes.shape({
+      backdrop_path: PropTypes.string.isRequired,
+      original_title: PropTypes.string.isRequired,
+      overview: PropTypes.string.isRequired,
+      genres: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+        })
+      ),
+    })
+  ),
 };

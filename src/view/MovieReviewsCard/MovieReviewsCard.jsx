@@ -1,4 +1,5 @@
 import autorImg from 'image/user-anonim.jpeg';
+import PropTypes from 'prop-types';
 import { ListItem, Item, Img } from './MovieReviewsCard.styled';
 export const MovieReviewsCard = ({ reviews }) => {
   return (
@@ -14,4 +15,13 @@ export const MovieReviewsCard = ({ reviews }) => {
       </Item>
     </>
   );
+};
+MovieReviewsCard.propTypes = {
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+    })
+  ),
 };

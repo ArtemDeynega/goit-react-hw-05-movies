@@ -8,17 +8,25 @@ import { MovieCasts } from 'components/MovieCasts';
 import { MovieReviews } from 'components/MovieReviews';
 import { GlobalStyles } from 'Styles/GlobalStyles/GlobalStyles';
 
-const HomaPageLazy = lazy(() => import('components/Layout'));
-const TrendingLazy = lazy(() => import('components/Trending'));
-const MoviesViewLazy = lazy(() => import('components/MoviesView'));
-const MovieDetailsLazy = lazy(() => import('components/MovieDetails'));
+const HomePageLazy = lazy(() =>
+  import('components/Layout' /* webpackChunkName: "home-page-lazy" */)
+);
+const TrendingLazy = lazy(() =>
+  import('components/Trending' /* webpackChunkName: "trending-lazy" */)
+);
+const MoviesViewLazy = lazy(() =>
+  import('components/MoviesView' /* webpackChunkName: "movies-view-lazy" */)
+);
+const MovieDetailsLazy = lazy(() =>
+  import('components/MovieDetails' /* webpackChunkName: "movie-details-lazy" */)
+);
 
 export const App = () => {
   return (
     <>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<HomaPageLazy />}>
+          <Route path="/" element={<HomePageLazy />}>
             <Route index element={<TrendingLazy />} />
             <Route path="movies" element={<MoviesViewLazy />} />
             <Route path="movies/:movieId" element={<MovieDetailsLazy />}>

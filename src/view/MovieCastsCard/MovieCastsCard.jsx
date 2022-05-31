@@ -1,5 +1,5 @@
 import userAnonim from 'image/user-anonim.jpeg';
-
+import PropTypes from 'prop-types';
 import { Container } from 'components/Container';
 import { Img, Text, ListItem, Item } from './MovieCastsCard.styled';
 
@@ -20,4 +20,7 @@ export const MovieCastsCard = ({ casts }) => {
       </Item>
     </Container>
   );
+};
+MovieCastsCard.propTypes = {
+  casts: PropTypes.array.isRequired,
 };

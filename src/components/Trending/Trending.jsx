@@ -1,6 +1,5 @@
 import { useFetchTrendingMovies } from 'hooks/useFetchTrendingMovies';
 import { TrendingTitle } from '.';
-import { Loader } from 'components/Loader';
 
 import { MovieCard } from 'view/MovieCard';
 
@@ -9,7 +8,6 @@ const Trending = () => {
   return (
     <>
       <TrendingTitle>Trending today</TrendingTitle>
-      {!trendingMovies && <Loader />}
 
       {trendingMovies && <MovieCard movies={trendingMovies} />}
     </>
