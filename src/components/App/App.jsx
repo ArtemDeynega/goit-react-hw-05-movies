@@ -4,8 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import { NotFound } from 'components/NotFound';
-import { MovieCasts } from 'components/MovieCasts';
-import { MovieReviews } from 'components/MovieReviews';
+
 import { GlobalStyles } from 'Styles/GlobalStyles/GlobalStyles';
 
 const HomePageLazy = lazy(() =>
@@ -21,6 +20,14 @@ const MovieDetailsLazy = lazy(() =>
   import('components/MovieDetails' /* webpackChunkName: "movie-details-lazy" */)
 );
 
+const MovieCastsLazy = lazy(() =>
+  import('components/MovieCasts' /* webpackChunkName: "movie-casts-lazy" */)
+);
+
+const MovieReviewsLazy = lazy(() =>
+  import('components/MovieReviews' /* webpackChunkName: "movie-reviews-lazy" */)
+);
+
 export const App = () => {
   return (
     <>
@@ -30,8 +37,8 @@ export const App = () => {
             <Route index element={<TrendingLazy />} />
             <Route path="movies" element={<MoviesViewLazy />} />
             <Route path="movies/:movieId" element={<MovieDetailsLazy />}>
-              <Route path="cast" element={<MovieCasts />} />
-              <Route path="reviews" element={<MovieReviews />} />
+              <Route path="cast" element={<MovieCastsLazy />} />
+              <Route path="reviews" element={<MovieReviewsLazy />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Route>

@@ -2,7 +2,7 @@ import { Container } from 'components/Container';
 import { useFetchMovieReviews } from 'hooks/useFetchMovieReviews';
 
 import { MovieReviewsCard } from 'view/MovieReviewsCard';
-export const MovieReviews = () => {
+const MovieReviews = () => {
   const reviews = useFetchMovieReviews();
   return (
     <Container>
@@ -14,3 +14,4 @@ export const MovieReviews = () => {
     </Container>
   );
 };
+export default MovieReviews;
